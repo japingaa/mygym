@@ -1,0 +1,35 @@
+body {
+    /* Define a imagem de fundo */
+    background-image: url('../html/image\ 9.png');
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
+    height: 100vh;
+    margin: 0;
+
+    /* Para garantir que o texto fique visível */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.topo {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end;
+    /* alinha à direita */
+    align-items: center;
+    list-style: none;
+    /* remove os marcadores (bolinhas) */
+    gap: 100px;
+    /* espaçamento entre os itens */
+}
+
+.topo ul {
+    padding: 0;
+    margin: 0;
+}
