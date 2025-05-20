@@ -20,7 +20,7 @@ body {
 .topo {
     padding: 15px 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     /* alinha à direita */
     align-items: center;
     list-style: none;
@@ -33,3 +33,23 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.mygym {
+    text-align: center;
+    align-items: center ;
+}
+
+.container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
