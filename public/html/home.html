@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial - Mockup com Aside</title>
+    <script src="../controllers/tokenController.js" defer></script>
+    <!-- Incluindo Tailwind CSS para facilitar o estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Cor de fundo escura, similar à imagem */
+            color: #f2f2f2; /* Cor do texto claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Garante que a página ocupe a altura total da viewport */
+            margin: 0;
+            padding: 0; /* Remove padding do body para que o aside possa ir até a borda */
+            box-sizing: border-box;
+        }
+
+        .main-wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 100vh; /* O wrapper garante que aside e conteúdo se estendam */
+        }
+
+        .aside-section {
+            background-color: #202020; /* Cor um pouco diferente para o aside */
+            width: 250px; /* Largura fixa para o aside */
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .aside-section .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e53e3e;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .aside-section nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .aside-section nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #f2f2f2;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .aside-section nav ul li a:hover {
+            background-color: #e53e3e;
+            color: white;
+        }
+
+        .container {
+            flex-grow: 1; /* O container principal ocupa o espaço restante */
+            background-color: #2a2a2a; /* Cor um pouco mais clara para o container principal */
+            border-radius: 0 0 12px 0; /* Ajuste para encaixar com o aside */
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            max-width: calc(100% - 250px); /* Ajuste para a largura do aside */
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Colunas para o layout principal do conteúdo */
+            gap: 20px; /* Espaço entre as seções */
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #444; /* Linha divisória */
+        }
+
+        .main-content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-row {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+            gap: 20px;
+            justify-content: space-around; /* Distribui os itens igualmente */
+        }
+
+        .content-block {
+            background-color: #3a3a3a; /* Cor para os blocos de conteúdo */
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 150px; /* Altura mínima para simular conteúdo */
+            flex: 1; /* Permite que o bloco cresça e encolha */
+            min-width: 280px; /* Largura mínima para evitar que fiquem muito pequenos */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
+            color: #b0b0b0; /* Cor de texto mais clara para blocos */
+            border: 1px dashed #555; /* Borda tracejada para indicar "espaço para conteúdo" */
+        }
+
+        .button-section {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .action-button {
+            background-color: #e53e3e; /* Vermelho vibrante, similar ao da imagem */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Remove sublinhado de links */
+        }
+
+        .action-button:hover {
+            background-color: #c53030; /* Tom mais escuro ao passar o mouse */
+        }
+
+        /* Responsividade para telas menores: aside se torna topo/fundo ou some */
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column; /* Em telas pequenas, o aside fica no topo */
+            }
+
+            .aside-section {
+                width: 100%; /* Aside ocupa largura total no topo */
+                min-height: unset; /* Remove min-height para aside */
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para o aside no topo */
+                border-radius: 0 0 12px 12px;
+            }
+
+            .aside-section nav ul {
+                flex-direction: row; /* Itens do menu do aside em linha */
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .container {
+                max-width: 100%; /* Container principal ocupa largura total */
+                border-radius: 0 0 12px 12px; /* Ajuste para telas pequenas */
+                padding: 20px;
+            }
+            .content-row {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Seção Aside (Menu Lateral Esquerdo) -->
+        <aside class="aside-section">
+            <div class="logo">MYGYM</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="#">Relatórios</a></li>
+                    <li><a href="#">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="container">
+            <!-- Seção de cabeçalho (simulação) -->
+            <div class="header-section">
+                <div class="text-2xl font-bold">Início</div>
+                <nav>
+                    <ul class="flex space-x-6 text-lg">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Início</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Serviços</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Sobre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Área de conteúdo principal -->
+            <div class="main-content-area">
+                <h1 class="text-3xl font-semibold text-center mb-5">Bem-vindo, <span style="color: #e53e3e;"> Nome</span></h1>
+
+                <!-- Linha 1 de blocos de conteúdo -->
+                <div class="content-row">
+                    <div class="content-block">
+                        
+                    </div>
+                </div>
+
+                <!-- Linha 2 de blocos de conteúdo (podem ser cards de produtos/notícias) -->
+                <div class="content-row">
+                    <div class="content-block">
+
+                    </div>
+                    <div class="content-block">
+
+                    </div>
+                    <div class="content-block">
+
+                    </div>
+                </div>
+
+                <!-- Linha 3 de blocos de conteúdo (por exemplo, informações adicionais ou recursos) -->
+                <div class="content-row">
+                    <div class="content-block"></div>
+                    <div class="content-block"></div>
+                </div>
+            </div>
+
+            <!-- Seção de rodapé (simulação) -->
+            <div class="button-section">
+                <!-- <a href="#" class="action-button">Ação Principal</a> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

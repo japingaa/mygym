@@ -1,0 +1,22 @@
+abra o repositorio no terminal 
+
+use Node v22.15.0
+
+npm i (instalar dependencias)
+
+npm start (iniciar aplicacao)
+
+
+CASO DE UM ERRO AO USAR A APLICACAO 
+
+execute:
+rm -rf node_modules
+rm package-lock.json
+npm cache clean --force
+npm i
+
+e depois eh so rodar novamente
+
+npm start
+
+

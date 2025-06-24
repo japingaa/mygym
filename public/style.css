@@ -1,0 +1,420 @@
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F0F4F8; /* Azul muito claro / Cinza azulado para o fundo */
+    color: #1F2937; /* Cinza escuro para texto principal */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo para permitir scroll */
+    min-height: 100vh;
+    padding: 20px; /* Espaçamento para não colar nas bordas da tela */
+}
+
+/* Container principal para Login e Cadastro */
+.container {
+    background-color: #FFFFFF;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px; /* Largura máxima para os formulários */
+    margin-top: 40px; /* Margem no topo */
+}
+
+/* Container para a página de Agendamento (mais largo) */
+.container-fluid {
+    background-color: #FFFFFF;
+    padding: 0; /* Navbar cuidará do padding interno */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 960px; /* Mais largo para a página de agendamento */
+    margin-top: 20px;
+    overflow: hidden; /* Para conter o border-radius com a navbar */
+}
+
+/* Cabeçalho dos formulários (Login e Cadastro) */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    background-color: #E0F2FE; /* Fundo para o placeholder da logo */
+}
+
+.form-header h1 {
+    font-size: 24px;
+    color: #2563EB; /* Azul principal */
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-header p {
+    font-size: 15px;
+    color: #4B5563; /* Cinza médio */
+}
+
+/* Corpo do formulário */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos de formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151; /* Cinza escuro */
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #D1D5DB; /* Cinza claro para borda */
+    border-radius: 8px;
+    font-size: 15px;
+    color: #1F2937;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3B82F6; /* Azul para foco */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9CA3AF; /* Cinza para placeholder */
+}
+
+.forgot-password {
+    font-size: 13px;
+    color: #3B82F6;
+    text-decoration: none;
+    align-self: flex-end;
+    margin-top: 6px;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botões */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-align: center;
+    text-decoration: none; /* Para links estilizados como botões */
+}
+
+.btn-primary {
+    background-color: #3B82F6; /* Azul principal */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #2563EB; /* Azul mais escuro no hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: #E5E7EB; /* Cinza claro */
+    color: #1F2937; /* Texto escuro */
+}
+.btn-secondary:hover {
+    background-color: #D1D5DB; /* Cinza um pouco mais escuro */
+}
+
+.btn-danger {
+    background-color: #EF4444; /* Vermelho */
+    color: #FFFFFF;
+}
+.btn-danger:hover {
+    background-color: #DC2626; /* Vermelho mais escuro */
+}
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+
+.btn-full-width {
+    width: 100%;
+}
+
+/* Rodapé do formulário (Login e Cadastro) */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.form-footer a {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de Agendamento */
+.navbar {
+    background-color: #3B82F6; /* Azul principal */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-top-left-radius: 12px; No need due to container-fluid overflow hidden */
+    /* border-top-right-radius: 12px; */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo-nav {
+    width: 40px; /* Logo menor na navbar */
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #FFFFFF; /* Fundo branco para a logo placeholder */
+}
+
+.navbar-brand span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-menu .btn-secondary { /* Botão Sair na navbar */
+    background-color: #FFFFFF;
+    color: #3B82F6;
+    font-weight: 500;
+}
+.navbar-menu .btn-secondary:hover {
+    background-color: #F0F4F8;
+}
+
+
+.main-content {
+    padding: 30px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E5E7EB; /* Linha divisória */
+    padding-bottom: 15px;
+}
+
+.page-header h2 {
+    font-size: 22px;
+    color: #1F2937;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 15px;
+    color: #4B5563;
+}
+
+.form-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Maior espaçamento para o form de agendamento */
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1; /* Ocupa espaço igual */
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Seção de Meus Agendamentos */
+.appointments-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.appointments-section h3 {
+    font-size: 20px;
+    color: #1F2937;
+    margin-bottom: 20px;
+}
+
+.appointment-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Layout responsivo em grade */
+    gap: 20px;
+}
+
+.appointment-item {
+    background-color: #F9FAFB; /* Fundo levemente acinzentado */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.appointment-item p {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+.appointment-item p strong {
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.appointment-item .btn-danger {
+    margin-top: 10px;
+    width: auto; /* Botão não ocupa largura total */
+    float: right;
+}
+
+#noAppointments {
+    background-color: #F9FAFB;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    text-align: center;
+    color: #6B7280;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container, .container-fluid {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .container-fluid {
+        padding: 0; /* Navbar ainda controla */
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .form-header h1 {
+        font-size: 22px;
+    }
+    .form-header p {
+        font-size: 14px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Empilha os campos em telas menores */
+        gap: 20px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+    .navbar-menu {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .navbar-menu a {
+        display: block; /* Faz os links ocuparem toda a largura */
+        width: 100%;
+        text-align: left;
+    }
+    .navbar-menu .btn-secondary {
+        width: 100%; /* Botão Sair também */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 20px 25px;
+    }
+    .form-header .logo {
+        width: 60px;
+        height: 60px;
+    }
+    .btn {
+        font-size: 15px;
+    }
+    .appointment-list {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MYGYM</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<script src="../controllers/loginController.js" defer></script>
+
+<body>
+    <header class="header">
+        <a href="telaInicial.html" class="logo">MYGYM</a>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">MENU 1</a></li>
+                <li><a href="#">MENU 2</a></li>
+                <li><a href="#">MENU 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <form class="container login-container" id="formLogin">
+            <h1>Login</h1>
+            <div class="form-grid">
+                <div class="input-group">
+                    <span class="material-icons">email</span>
+                    <input type="text" placeholder="Email" name="emailCpf" required>
+                </div>
+                <div class="input-group">
+                    <span class="material-icons">lock</span>
+                    <input type="password" placeholder="Senha" name="senha" required>
+                </div>
+            </div>
+
+            <button class="login-button">Login</button>
+
+            <p class="login-link">
+                Ainda não tem cadastro? <a href="/cadastro">Registre-se</a>
+            </p>
+        </form>
+    </main>
+</body>
+
+</html>

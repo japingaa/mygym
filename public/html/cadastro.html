@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - MYGYM</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<script src="../controllers/cadastroController.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="telaInicial.html" class="logo">MYGYM</a>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">MENU 1</a></li>
+                <li><a href="#">MENU 2</a></li>
+                <li><a href="#">MENU 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <h1>Registre-se</h1>
+            <form id="formCadastro">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <span class="material-icons">person</span>
+                        <input required  type="text" placeholder="Nome" name="nomeCompleto">
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">email</span>
+                        <input required  type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">calendar_month</span>
+                        <input required  type="date" placeholder="Data de Nascimento" name="dataNascimento">
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">lock</span>
+                        <input required  type="password" placeholder="Senha" name="senha" id="senha">
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">call</span>
+                        <input required  type="tel" placeholder="Celular" name="telefone" id="telefone">
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">lock</span>
+                        <input required  type="password" placeholder="Confirmar Senha" id="confirmarSenha">
+                    </div>
+                </div>
+                <div class="checkbox-group">
+                        <input required  type="checkbox" id="terms">
+                        <label for="terms">Termos e Condições</label>
+                    </div>
+                <div>
+                    <input type="submit" class="login-button" value="Registrar">
+                </div>
+            </form>
+
+            <p class="login-link">
+                Já tem cadastro? <a href="/login">Login</a>
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar-se</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <section>
+            
+            <h2 class="logo">MYGYM</h2>
+            <nav>
+                <ul div class="topo">
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <div class="tela-registrar">
+            <h1>Registre-se</h1>
+            <div>
+                <table>
+                    <td>Nome</td>
+                    <td>Data de Nascimento</td>
+                    <td>Celular</td>
+                </table>
+                <table>
+                    <td>E-mail</td>
+                    <td>Senha</td>
+                    <td>Confirmar Senha</td>
+                </table>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">Termos e Condições</label>
+            </div>
+    
+            <p class="login-link">
+                Ainda não tem cadastro? <a href="#">Registre-se</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html> -->
